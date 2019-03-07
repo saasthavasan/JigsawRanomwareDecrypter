@@ -7,13 +7,14 @@ Full Analysis report of Jigsaw Ransomware can be found [here](https://github.com
 ## **Installing Dependencies**:
 
 ```bash
-sudo pip3 -r install dependencies
+pip3 install -r requirements.txt
 ```
 
 # **How to Use**:
 
 ```
-python3 JigsawDecrypter.py [encrypted filename]
+python3 jigsawDecrypter.py -i [Encrypted file name]
+
 ```
 
 # **To Do**:
@@ -24,8 +25,4 @@ python3 JigsawDecrypter.py [encrypted filename]
 
 # **Disclaimer**:
 
-As this software is **PROVIDED WITH ABSOLUTELY NO WARRANTY OF ANY KIND,YOU USE THIS SOFTWARE AT YOUR OWN RISK!**
-
-By using this tool **YOU TAKE FULL LEGAL RESPONSIBILITY FOR ANY POSSIBLE OUTCOME!**
-
-Keep in mind that this tool is based on intreracting with malicious encrypted files and it is also possible that while running this file the malware itslef might be active in the system.
+As this software is **PROVIDED WITH ABSOLUTELY NO WARRANTY OF ANY KIND,YOU USE THIS TOOL AT YOUR OWN RISK!**
