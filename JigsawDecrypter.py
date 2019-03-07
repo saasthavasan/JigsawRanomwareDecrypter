@@ -15,19 +15,23 @@ def Decrypt(encryptedData):
     return decryptedData
 
 def readFile(inputFile):
-    file1 = open(inputFile, "r")
-    encryptedData = file1.read()
+    encryptedData = ""
+
+    with open(inputFile, 'r') as file1:
+        encryptedData = file1.read()
+        file1.close()
     return encryptedData
+
 
 def writeFile(inputFile, decryptedData):
     if inputFile[-4:] == ".fun":
-        file2 = open(inputFile[:-4], "w")
-        file2.write(decryptedData)
-        file2.close()
+        with open(inputFile[:-4], 'w') as file2:
+            file2.write(decryptedData)
+            file2.close()
     else:
-        file2 = open(inputFile, "w")
-        file2.write(decryptedData)
-        file2.close()
+        with open(inputFile, 'w') as file2:
+            file2.write(decryptedData)
+            file2.close()
 
 
 def main(argv):
@@ -48,7 +52,6 @@ def main(argv):
     encryptedData = readFile(inputFile)
     decryptedData = Decrypt(encryptedData)
     writeFile(inputFile, decryptedData)
-    #file2.close()
 
 
 if __name__ == "__main__":
