@@ -7,13 +7,13 @@ Full Analysis report of Jigsaw Ransomware can be found [here](https://github.com
 ## **Installing Dependencies**:
 
 ```bash
-pip3 install -r requirements.txt
+sudo pip install -r requirements.txt
 ```
 
 # **How to Use**:
 
 ```
-python3 jigsawDecrypter.py -i [Encrypted file name]
+python jigsawDecrypter.py -i [Encrypted file name]
 
 ```
 
