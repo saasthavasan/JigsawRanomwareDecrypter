@@ -20,7 +20,7 @@ python jigsawDecrypter.py -i [Encrypted file name]
 
 ## Example
 ```
-python jigsawDecrypter -i Sample/Hello.txt.fun
+python jigsawDecrypter.py -i Sample/Hello.txt.fun
 
 ```
 
