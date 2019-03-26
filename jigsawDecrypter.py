@@ -35,7 +35,7 @@ def main(argv):
 	if args[0] == '-h':
 		print('python jigsawRansomware.py -<option>')
 		print('\n<options>')
-		print("\n1. For decrypting a paricular file:\npython jigsawRansomware.py -i <inputfile> -o <outputfile>\n\n2. For deleting Registry Value:\npython jigsawRansomware.py -r")
+		print("\n1. For decrypting a paricular file:\npython jigsawRansomware.py -i <inputfile> -o <outputfile>\n\n2. For deleting Registry Value and Dropped Files:\npython jigsawRansomware.py -r")
 		sys.exit()
 	elif args[0] == '-i':
 		try:
@@ -50,17 +50,22 @@ def main(argv):
 			sys.exit(2)
 
 	elif args[0] == '-r':
-		ret = registryRemover.registryMain()
-		if ret == 1:
+		ret1 = registryRemover.registryMain()
+		if ret1 == 1:
 			print("Registry Value Deleted Successfully")
 		else:
 			print("Cannot Delete Registry Value")
+		ret2 = deleteFiles.deleteMain()
+		if ret2 == 1:
+			 print("Successfully deleted malicious Files")
+		else:
+			print("Malicious File Not Found")
 	else:
 		print('python jigsawRansomware.py -<option>')
 		print('For help command is:')
 		print('python jigsawRansomware.py -h')
 
 
-		
+
 if __name__ == "__main__":
 	main(sys.argv[1:])
