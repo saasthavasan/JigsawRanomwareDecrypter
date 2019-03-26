@@ -1,11 +1,11 @@
 
 import os
-import _winreg
+from _winreg import *
 
 def deleteKey(location, value):
 	try:
 		reg = ConnectRegistry(None, HKEY_LOCAL_MACHINE)
-		key = OpenKey(HKEY_LOCAL_MACHINE,location, 0, KEY_ALL_ACCESS)
+		key = OpenKey(reg,location, 0, KEY_ALL_ACCESS)
 		DeleteValue(key, value)
 		CloseKey(key)
 		return 1
