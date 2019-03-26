@@ -14,20 +14,29 @@ sudo pip install -r requirements.txt
 # **How to Use**:
 
 ```
-python jigsawDecrypter.py -i [Encrypted file name]
+python jigsawRansomware.py -<option>
+
+<Options>
+For decrypting a paricular file:
+```
+python jigsaw -i <inputfile Path>
 
 ```
-
+For Removing the dropped files and removing Registry Keys:
+```
+python jigsaw -r
+```
 ## Example
 ```
 python jigsawDecrypter.py -i Sample/Hello.txt.fun
+
+python jigsawDecrypter.py -r
 
 ```
 
 # **To Do**:
 
 * **Adding support for scanning directories**
-* **Automatic removal of malicious files**
 * **Searching for the default directory of encrypted files list**
 
 # **Disclaimer**:
