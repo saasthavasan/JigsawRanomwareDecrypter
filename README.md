@@ -16,6 +16,8 @@ sudo pip install -r requirements.txt
 ```
 python jigsawRansomware.py -<option>
 
+```
+
 <Options>
 For decrypting a paricular file:
 ```
@@ -26,7 +28,7 @@ For Removing the dropped files and removing Registry Keys:
 ```
 python jigsaw -r
 ```
-## Example
+## Examples
 ```
 python jigsawDecrypter.py -i Sample/Hello.txt.fun
 
