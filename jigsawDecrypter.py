@@ -61,7 +61,6 @@ def main(argv):
                         print('For help command is:')
                         print('jigsawRansomware.py -h')
                         sys.exit(2)
-	
 	elif args[0] == '-r':
 		ret1 = registryRemover.registryMain()
 		if ret1 == 1:
