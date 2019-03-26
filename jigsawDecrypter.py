@@ -36,31 +36,26 @@ def main(argv):
 	if args[0] == '-h':
 		print('python jigsawDecrypter.py -<option>')
 		print('\n<options>')
-		print("\n1. For decrypting a paricular file:\npython jigsawDecrypter.py -i <inputfile> -o <outputfile>\n\n2. For deleting Registry Value and Dropped Files:\npython jigsawDecrypter.py -r")
+		print("\n1. For decrypting a paricular file:\npython jigsawDecrypter.py -i <inputfile>\n\n2.For decrypting entire directory:\npython jigsawDecrypter.py -d <directorypath>\n\n3. For deleting Registry Value and Dropped Files:\npython jigsawDecrypter.py -r")
 		sys.exit()
 	elif args[0] == '-i':
-		try:
-			inputFile = args[1]
-			encryptedData = readFile(inputFile)
-			decryptedData = decryption.Decrypt(encryptedData)
-			writeFile(inputFile, decryptedData)
-		except:
-			print('jigsawRansomware.py -<option>')
-			print('For help command is:')
-			print('jigsawRansomware.py -h')
-			sys.exit(2)
+		inputFile = args[1]
+		ret = decryption.decryptFile(inputFile)
+                        if ret == 1:
+                                print("Decrypted " + inputFile)
+                        else:
+                                print("Unable to Decrypt " + inputFile)
+
 	
 	elif args[0] == '-d'
-		try:
-                        inputFile = args[1]
-                        encryptedData = readFile(inputFile)
-                        decryptedData = decryption.Decrypt(encryptedData)
-                        writeFile(inputFile, decryptedData)
-                except:
-                        print('jigsawRansomware.py -<option>')
-                        print('For help command is:')
-                        print('jigsawRansomware.py -h')
-                        sys.exit(2)
+		path = args[1]
+		ret = decryptDirectory.directoryDecrypt(path)
+		if ret == 1:
+			print("All the files in " + path + " are decrypted")
+		else:
+			print("Unable to Decrypt some files in " + path)
+
+	
 	elif args[0] == '-r':
 		ret1 = registryRemover.registryMain()
 		if ret1 == 1:
