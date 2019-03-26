@@ -6,9 +6,10 @@ Full Analysis report of Jigsaw Ransomware can be found [here](https://github.com
 
 ## **Installing Dependencies**:
 
-`sudo pip install -r requirements.txt`
+`pip install -r requirements.txt`
 
 # **How to Use**:
+This tool require Administrative privilages to function properly, use this tool in cmd opend as an admistrator.
 
 `python jigsawRansomware.py -<option>`
 
@@ -16,7 +17,7 @@ Full Analysis report of Jigsaw Ransomware can be found [here](https://github.com
 <Options>
 For decrypting a paricular file:
 
-`python jigsaw -i <inputfile Path>``
+`python jigsaw -i <inputfile Path>`
 
 For Removing the dropped files and removing Registry Keys:
 
