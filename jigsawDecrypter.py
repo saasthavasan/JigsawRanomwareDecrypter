@@ -25,33 +25,42 @@ def writeFile(inputFile, decryptedData):
 
 def main(argv):
 	try:
-		# Cheking for correct arguments
-		opts, args = getopt.getopt(argv,"hi:o:",["ifile=","ofile="])
-	except getopt.GetoptError:
-		print('jigsawRansomware.py -<option>')
+		args = argv
+	except :
+		print('python jigsawRansomware.py -<option>')
 		print('For help command is:')
-		print('jigsawRansomware.py -h')
+		print('python jigsawRansomware.py -h')
 		sys.exit(2)
 
-	for opt, arg in opts:
-		if opt == '-h':
-			print('python jigsawRansomware.py -<option>')
-			print('\n<options>')
-			print("\n1. For decrypting a paricular file:\npython jigsawRansomware.py -i <inputfile> -o <outputfile>\n\n2. For deleting Registry Value:\npython jigsawRansomware.py -a")
-	
-			sys.exit()
-		elif opt == '-i':
-			inputFile = arg
+	if args[0] == '-h':
+		print('python jigsawRansomware.py -<option>')
+		print('\n<options>')
+		print("\n1. For decrypting a paricular file:\npython jigsawRansomware.py -i <inputfile> -o <outputfile>\n\n2. For deleting Registry Value:\npython jigsawRansomware.py -r")
+		sys.exit()
+	elif args[0] == '-i':
+		try:
+			inputFile = args[1]
 			encryptedData = readFile(inputFile)
-        		decryptedData = decryption.Decrypt(encryptedData)
-        		writeFile(inputFile, decryptedData)
+			decryptedData = decryption.Decrypt(encryptedData)
+			writeFile(inputFile, decryptedData)
+		except:
+			print('jigsawRansomware.py -<option>')
+			print('For help command is:')
+			print('jigsawRansomware.py -h')
+			sys.exit(2)
 
-		elif opt == '-r':
-			ret = registryRemover.registryMain()
-			if ret == 1:
-				print("Registry Value Deleted Successfully")
-			else:
-				print("Cannot Delete Registry Value")
+	elif args[0] == '-r':
+		ret = registryRemover.registryMain()
+		if ret == 1:
+			print("Registry Value Deleted Successfully")
+		else:
+			print("Cannot Delete Registry Value")
+	else:
+		print('python jigsawRansomware.py -<option>')
+		print('For help command is:')
+		print('python jigsawRansomware.py -h')
 
+
+		
 if __name__ == "__main__":
 	main(sys.argv[1:])
