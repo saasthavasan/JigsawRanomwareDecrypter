@@ -1,6 +1,7 @@
 import sys, getopt
 import decryption
 import registryRemover
+import deleteFiles
 
 
 def readFile(inputFile):
