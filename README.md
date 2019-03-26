@@ -11,29 +11,36 @@ Full Analysis report of Jigsaw Ransomware can be found [here](https://github.com
 # **How to Use**:
 This tool require Administrative privilages to function properly, use this tool in cmd opend as an admistrator.
 
-`python jigsawRansomware.py -<option>`
+`python jigsawDecrypter.py -<option>`
 
 
 <Options>
 For decrypting a paricular file:
 
-`python jigsaw -i <inputfile Path>`
+`python jigsawDecrypter.py -i <inputfile Path>`
+
+For decrypting entire directory:
+
+`python jigsawDecrypter.py -i <inputfile Path>`
 
 For Removing the dropped files and removing Registry Keys:
 
-`python jigsaw -r`
+`python jigsawDecrypter.py -r`
 
 ## Examples
 
 `python jigsawDecrypter.py -i Sample/Hello.txt.fun`
+
+`python jigsawDecrypter.py -d Sample/`
 
 `python jigsawDecrypter.py -r`
 
 
 # **To Do**:
 
-* **Adding support for scanning directories**
-* **Searching for the default directory of encrypted files list**
+* **Searching for the default directory of encrypted files**
+* **Porting the tool to python3 **
+ list**
 
 # **Disclaimer**:
 
